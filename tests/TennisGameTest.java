@@ -79,4 +79,21 @@ public class TennisGameTest {
 		// Assert
 		assertEquals("Player1 win score incorrect", "player1 wins", score);
 	}
+	
+	@Test
+	public void testTennisGame_Player2WinsGame() throws TennisGameException {
+		// Arrange
+		TennisGame game = new TennisGame();
+		
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		game.player2Scored();
+		
+		// Act
+		String score = game.getScore();
+		
+		// Assert
+		assertEquals("Player2 win score incorrect", "player2 wins", score);
+	}
 }
