@@ -61,5 +61,22 @@ public class TennisGameTest {
 		//Act
 		// This statement should cause an exception
 		game.player1Scored();			
-	}		
+	}
+	
+	@Test
+	public void testTennisGame_Player1WinsGame() throws TennisGameException {
+		// Arrange
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		game.player1Scored();
+		
+		// Act
+		String score = game.getScore();
+		
+		// Assert
+		assertEquals("Player1 win score incorrect", "player1 wins", score);
+	}
 }
