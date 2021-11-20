@@ -152,4 +152,21 @@ public class TennisGameTest {
 		// Assert
 		assertEquals("Player2 advantage score incorrect", "player2 has advantage", score);
 	}
+	
+	@Test
+	public void testTennisGame_ScoreMidGame() throws TennisGameException {
+		// Arrange
+		TennisGame game = new TennisGame();
+		
+		game.player1Scored();
+		
+		game.player2Scored();
+		game.player2Scored();
+		
+		// Act
+		String score = game.getScore();
+		
+		// Assert
+		assertEquals("30-15 score incorrect", "30 - 15", score);
+	}
 }
